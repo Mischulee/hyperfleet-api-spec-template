@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.27] - 2026-07-02
+
+### Added
+
+- `SubnetSpec` model and `subnets` optional field to `ClusterPlatform` (HYPERFLEET-1202)
+
 ## [1.0.24] - 2026-06-22
 
 ### Fixed
@@ -91,7 +97,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `hyperfleet` npm dependency for importing shared models and services from the core repository
 
 <!-- Links -->
-[Unreleased]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec-template/compare/v1.0.24...HEAD
+[Unreleased]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec-template/compare/v1.0.27...HEAD
+[1.0.27]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec-template/compare/v1.0.24...v1.0.27
 [1.0.24]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec-template/compare/v1.0.23...v1.0.24
 [1.0.23]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec-template/compare/v1.0.22...v1.0.23
 [1.0.22]: https://github.com/openshift-hyperfleet/hyperfleet-api-spec-template/compare/v1.0.21...v1.0.22

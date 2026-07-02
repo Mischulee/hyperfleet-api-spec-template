@@ -11,12 +11,20 @@ model ClusterPlatformSpec {
     template: ClusterPlatform;
 }
 
+model SubnetSpec {
+    id: string;
+    name: string;
+    cidr: string;
+    role: string;
+}
+
 model ClusterPlatform {
     projectID?: string;
     region?: string;
     zone?: string;
     network?: string;
     subnet?: string;
+    subnets?: SubnetSpec[];
 }
 
 model ReleaseSpec {
