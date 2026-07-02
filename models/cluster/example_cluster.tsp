@@ -17,6 +17,10 @@ const exampleCluster: Cluster = #{
         zone: "us-central1-a",
         network: "network-123",
         subnet: "subnet-123",
+        subnets: #[
+          #{ id: "subnet-01", name: "control-plane", cidr: "10.0.1.0/24", role: "control-plane" },
+          #{ id: "subnet-02", name: "worker-nodes", cidr: "10.0.2.0/24", role: "worker" },
+        ],
       },
     },
     release: #{
@@ -97,6 +101,10 @@ const exampleDeletedCluster: Cluster = #{
         zone: "us-central1-a",
         network: "network-123",
         subnet: "subnet-123",
+        subnets: #[
+          #{ id: "subnet-01", name: "control-plane", cidr: "10.0.1.0/24", role: "control-plane" },
+          #{ id: "subnet-02", name: "worker-nodes", cidr: "10.0.2.0/24", role: "worker" },
+        ],
       },
     },
     release: #{
