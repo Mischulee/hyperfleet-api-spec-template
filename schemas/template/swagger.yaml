@@ -17,7 +17,7 @@ info:
     name: Apache 2.0
     url: 'https://www.apache.org/licenses/LICENSE-2.0'
   title: HyperFleet API
-  version: 1.0.26
+  version: 1.0.27
 host: hyperfleet.redhat.com
 basePath: /
 schemes:
@@ -1902,6 +1902,10 @@ definitions:
         type: string
       subnet:
         type: string
+      subnets:
+        items:
+          $ref: '#/definitions/SubnetSpec'
+        type: array
       zone:
         type: string
     type: object
@@ -2589,6 +2593,22 @@ definitions:
         type: array
     required:
       - conditions
+    type: object
+  SubnetSpec:
+    properties:
+      cidr:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      role:
+        type: string
+    required:
+      - id
+      - name
+      - cidr
+      - role
     type: object
   TaintSpec:
     properties:
