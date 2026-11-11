@@ -41,7 +41,7 @@ import "hyperfleet/shared/services/resources.tsp";
 The `hyperfleet` package is sourced from the core repo branch/tag in `package.json`:
 
 ```json
-"hyperfleet": "github:openshift-hyperfleet/hyperfleet-api-spec#v1.0.18"
+"hyperfleet": "github:openshift-hyperfleet/hyperfleet-api-spec#vX.Y.Z"
 ```
 
 To use a local core checkout during development, use `npm link` or a local path:
@@ -108,8 +108,7 @@ services/
 
 **DO:**
 
-- Run `./build-schema.sh` and commit `schemas/template/openapi.yaml` with your changes
-- Run `./build-schema.sh --swagger` and commit `schemas/template/swagger.yaml` when releasing
+- Run `./build-schema.sh` and commit both `schemas/template/openapi.yaml` and `schemas/template/swagger.yaml` with your changes
 - Keep TypeSpec files focused (one resource per service file)
 - Update `package.json` to pin a new core version when consuming new shared models
 
@@ -192,7 +191,7 @@ import "./services/policies.tsp";
 1. Edit `package.json`:
 
 ```json
-"hyperfleet": "github:openshift-hyperfleet/hyperfleet-api-spec#v1.0.19"
+"hyperfleet": "github:openshift-hyperfleet/hyperfleet-api-spec#vX.Y.Z"
 ```
 
 1. Reinstall and rebuild:
@@ -216,11 +215,10 @@ When bumping the version in `main.tsp`, always update `CHANGELOG.md`:
 Before submitting changes:
 
 - [ ] Dependencies installed: `npm install`
-- [ ] Template schema builds: `./build-schema.sh`
-- [ ] Template Swagger builds: `./build-schema.sh --swagger`
+- [ ] Template schemas build (OpenAPI 3.0 and Swagger 2.0): `./build-schema.sh`
 - [ ] Schema files generated: `ls schemas/template/openapi.yaml schemas/template/swagger.yaml`
 - [ ] No TypeSpec compilation errors (check output)
-- [ ] Schema passes linting: `spectral lint schemas/template/openapi.yaml`
+- [ ] Schema passes linting: `npx spectral lint schemas/template/openapi.yaml --fail-severity warn`
 - [ ] Changes committed including schema updates
 - [ ] PR description references related issue
 
@@ -230,7 +228,7 @@ Before submitting changes:
 
 1. Runs `node_modules/.bin/tsp compile main.tsp --output-dir tsp-output-template`
 2. Moves output to `schemas/template/openapi.yaml`
-3. (Optional with `--swagger`) Converts to OpenAPI 2.0 via `api-spec-converter` → `schemas/template/swagger.yaml`
+3. Converts to OpenAPI 2.0 via `api-spec-converter` -> `schemas/template/swagger.yaml`
 
 **Output locations:**
 
